@@ -32,8 +32,8 @@ namespace ModuleA
             region.Activate(view1);
 
             var view2 = containerProvider.Resolve<ViewA>();
-            //region.Add(view2);
-            //region.Activate(view2);
+            region.Add(view2);
+            region.Activate(view2);
 
         }
 
