@@ -30,4 +30,7 @@ public void OnInitialized(IContainerProvider containerProvider)
     region.Add(view2);
     region.Activate(view2);
 ```
-- 
+- The following is the code which creates a region. This creates an entry into the RegionManager called ChildRegion. So when two instances are activated, to entires with the same name will exist, so the exception.
+```xml
+<ContentControl prism:RegionManager.RegionName="ChildRegion" Margin="15" />
+```
