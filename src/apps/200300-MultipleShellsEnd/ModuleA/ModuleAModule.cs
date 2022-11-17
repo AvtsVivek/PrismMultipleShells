@@ -23,12 +23,15 @@ namespace ModuleA
         public void OnInitialized(IContainerProvider containerProvider)
         {
             // The OnInitialized method will guarantee that the shell has been loaded and that the region has been created at this point
-            _regionManager.RegisterViewWithRegion("ContentRegion", typeof(ViewA));
+            // The following can be done to navigate to a view in a region, but this is not the best place. 
+            // So commenting out.
+            // _regionManager.RegisterViewWithRegion("ContentRegion", typeof(ViewA));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.RegisterForNavigation<ViewA>();
+            containerRegistry.RegisterForNavigation<ViewB>();
         }
     }
 }

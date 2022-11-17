@@ -13,6 +13,16 @@
         Title="{Binding WindowTitle}"
         Height="450" Width="800">
     <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Menu>
+            <MenuItem Header="Open Shell" Command="{Binding OpenShellCommand}" CommandParameter="ViewB" />
+            <MenuItem Header="Navigate To ViewA" Command="{Binding NavigateCommand}" CommandParameter="ViewA" />
+            <MenuItem Header="Navigate To ViewB" Command="{Binding NavigateCommand}" CommandParameter="ViewB" />
+        </Menu>
+        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="ContentRegion" />
     </Grid>
 </Window>

@@ -13,5 +13,11 @@
 	  <ItemGroup>
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
   </ItemGroup>
+	
+	  <ItemGroup>
+	    <Compile Update="Views\ViewB.xaml.cs">
+	      <SubType>Code</SubType>
+	    </Compile>
+	  </ItemGroup>
 
 </Project>
