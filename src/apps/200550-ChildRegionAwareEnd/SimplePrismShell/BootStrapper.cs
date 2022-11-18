@@ -1,4 +1,5 @@
-﻿using ModuleA;
+﻿using Microsoft.Xaml.Behaviors;
+using ModuleA;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -46,6 +47,12 @@ namespace SimplePrismShell
             var firstShellWindow = (ShellWindow)Shell;
             var firstShellWindowViewModel = (ShellWindowViewModel)firstShellWindow.DataContext;
             firstShellWindowViewModel.NavigateCommand.Execute("ViewA");
+        }
+
+        protected override void ConfigureDefaultRegionBehaviors(IRegionBehaviorFactory regionBehaviors)
+        {
+            base.ConfigureDefaultRegionBehaviors(regionBehaviors);
+            regionBehaviors.AddIfMissing(RegionManagerAwareBehavior.BehaviorKey, typeof(RegionManagerAwareBehavior));
         }
     }
 }
