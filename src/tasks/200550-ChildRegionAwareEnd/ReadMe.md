@@ -12,8 +12,8 @@
 
 ![Child Region Problem](./images/20ChildRegionMultipleShellProblem20.jpg)
 
-- Clicking the button in the second window should take that second windows to View B. But instead the first window is taken to ViewB. The reason is because the ViewAViewModel has global region manger injected into it. What it needs is the scoped region manager. 
+- Clicking the button in the second window should take that second windows to View B. But instead the first window is taken to ViewB
 
 ![Child Region Problem](./images/20ChildRegionMultipleShellProblem30.jpg)
 
-- This will be fixed in the next example. 
+- This will be fixed in the next example.
