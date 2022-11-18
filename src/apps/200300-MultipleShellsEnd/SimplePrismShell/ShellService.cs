@@ -34,11 +34,11 @@ namespace SimplePrismShell
             var shellWindow = _container.Resolve<ShellWindow>();
             var shellWindowViewModel = (ShellWindowViewModel)shellWindow.DataContext;
 
-            var scopedRegion = _regionManager.CreateRegionManager();
-            RegionManager.SetRegionManager(shellWindow, scopedRegion);
+            var scopedRegionManager = _regionManager.CreateRegionManager();
+            RegionManager.SetRegionManager(shellWindow, scopedRegionManager);
             
-            shellWindowViewModel.SetScopedRegionManager(scopedRegion);
-            scopedRegion.RequestNavigate("ContentRegion", uri);
+            shellWindowViewModel.SetScopedRegionManager(scopedRegionManager);
+            scopedRegionManager.RequestNavigate("ContentRegion", uri);
             shellWindow.Show();
         }
     }
