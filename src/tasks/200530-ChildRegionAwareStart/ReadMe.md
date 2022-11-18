@@ -1,29 +1,19 @@
 # Shows how to work with multiple shells.
-- Thisis the starting app for the next example.
-- This app nees a bootstrap class.
-- So to introduce the bootstrap class do the followng.
-  - Add a BootStrapper.cs class 
-  - Change the App class to derive from Application rather than PrismApplication. This should be done in both the App.xaml.cs and App.xaml file.
-  - So the xaml changes are as follows.
-  ```xml
-  <prism:PrismApplication x:Class="SimplePrismShell.App"
-  >
+- This is built from 200500-ShellRegionAware.
+- This is a start example where a problem will be demonistrated which will be fixed in the subsequent example.
+- This app has a problem, and this will be fixed in the subsequent example. 
+- ViewA has a button when clicked should take you to ViewB.
+```xml
+<Button Command="{Binding NavigateCommand}" Content="Navigate to ViewB" FontSize="30" />
+```
+- The view model has a correponding NavigateCommand and its handler to handle the click event, and this will show ViewB.
 
-  </prism:PrismApplication>
-  ```
-  to the following.
-  ```xml
-  <Application x:Class="SimplePrismShell.App"
-  >
-  </Application>
-  ```
-  - In the App.xaml.cs file, comment out the rest of the code and just override the OnStartup method.
-  ```cs
-  protected override void OnStartup(StartupEventArgs e)
-  {
-      base.OnStartup(e);
-      var bootstrapper = new BootStrapper();
-      bootstrapper.Run();
-  }
-  ```
-  - Now run the app. It should work.
+- Now the problem. Run the app and do the following.
+
+![Child Region Problem](./images/20ChildRegionMultipleShellProblem20.jpg)
+
+- Clicking the button in the second window should take that second windows to View B. But instead the first window is taken to ViewB
+
+![Child Region Problem](./images/20ChildRegionMultipleShellProblem30.jpg)
+
+- This will be fixed in the next example.
