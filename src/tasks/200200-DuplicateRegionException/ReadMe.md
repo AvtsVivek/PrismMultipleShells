@@ -34,3 +34,7 @@ public void OnInitialized(IContainerProvider containerProvider)
 ```xml
 <ContentControl prism:RegionManager.RegionName="ChildRegion" Margin="15" />
 ```
+
+
+- Take a look at other [example here](https://github.com/AvtsVivek/WpfMasterTabControl/tree/main/src/apps/200700-TcSameRegionNameException). And the [explanation here](https://github.com/AvtsVivek/WpfMasterTabControl/tree/main/src/tasks/200700-TcSameRegionNameException) 
+
