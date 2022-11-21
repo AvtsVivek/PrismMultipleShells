@@ -13,4 +13,4 @@ protected override void ConfigureDefaultRegionBehaviors(IRegionBehaviorFactory r
 }
 ```
 - Finally modify ViewAViewModel so that it will be RegionManagerAware. Impliment IRegionManagerAware interface. This means the view model will now use the RegionManager from the interface for navigation and not the global or root region manager. The global region manager is no longer needed, so remove it. Ctor injection should also be removed.
--  
+- Similar [example is here](https://github.com/AvtsVivek/WpfMasterTabControl/tree/main/src/tasks/200750-TcChildNavigation).
